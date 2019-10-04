@@ -1,0 +1,64 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+nav {
+    z-index: 2;
+    background-color: transparent;
+}
+
+nav ul {
+    margin: 00%;
+    width: 100;
+    background-color: transparent;
+    list-style: none;
+}
+
+nav ul li {
+    background-color: transparent;
+    display: inline;
+}
+
+
+/*alterando cor do texto, margem, distância, tirando o  
+sublinhado que fica quando normalmente se cria um menu
+e tirando a decoração padrão dos textos (roxa)*/
+
+nav ul li a {
+    padding: 15px 10px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-family: cursive;
+}
+
+
+/* Alterar cor quando passar o mouse em cima da opção*/
+
+nav ul li a:hover {
+    color: lightblue;
+}
+
+nav ul div {
+    float: right;
+}
+
+body {
+    background-image: url("nova\ york\ a\ noite.jpg");
+    background-attachment: fixed;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-color: transparent;
+}
+
+.contato1 {
+    position: fixed;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

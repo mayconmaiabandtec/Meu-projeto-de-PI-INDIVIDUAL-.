@@ -1,0 +1,129 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+nav {
+    z-index: 2;
+    background-color: transparent;
+}
+
+nav ul {
+    margin: 00%;
+    width: 100;
+    background-color: transparent;
+    list-style: none;
+}
+
+nav ul li {
+    background-color: transparent;
+    display: inline;
+}
+
+nav ul li a {
+    padding: 15px 10px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-family: cursive;
+}
+
+nav ul li a:hover {
+    color: lightblue;
+}
+
+nav ul div {
+    float: right;
+}
+
+body {
+    background-image: url("./brooklyn.jpg");
+    background-attachment: fixed;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-color: transparent;
+}
+
+.caixas {
+    position: fixed;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    position: relative;
+    background: transparent;
+    width: 250px;
+    height: 300px;
+    margin-top: -28%
+}
+
+form h3 {
+    position: relative;
+    width: 100%;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 7px;
+}
+
+form label {
+    position: relative;
+    display: block;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 15px;
+    margin-top: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+form input {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+}
+
+form button {
+    position: relative;
+    width: 100px;
+    padding: 7px;
+    box-sizing: border-box;
+    color: #fff;
+    border: solid 1px #4169E1;
+    border-radius: 10px;
+    background: #4169E1;
+    cursor: pointer;
+    margin-top: 15px;
+    left: 50%;
+    margin-left: -250px;
+}
+
+#elementos {
+    position: absolute;
+    right: 0px;
+    width: 150px;
+    float: right;
+}
+
+#elementos li {
+    float: right;
+}
+
+form button:hover {
+    transition: all .2s linear;
+    color: #4169E1;
+    background: transparent;
+    border: solid 1px black;
+}
