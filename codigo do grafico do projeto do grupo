@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=15ea8232-a1ea-45ca-9a6b-eb2a7142edce"> </script>  
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grafico (Dashboard)</title>
+       <link rel="stylesheet" href="./css/grafico.css">
+   
+</head>
+<body>
+  <nav>
+
+    <ul>
+    <li><a href="./home page.html"><span class="inicio1">Cow</span> <span class="meio">-</span> <span class="fim">welfare </span> </li></a>
+        <li><a href="./simulador_financeiro.html">Simulador financeiro</a></li>
+        <li><a href="./Arduino/serialjs/index.html">Dashboard</a></li>
+
+        <div class="separados">
+            <li><a href="tela de login.html">Login</a></li>
+            <li><a href="tela_de_cadastro.html">Cadastro</a></li>
+        </div>
+    </ul>
+    
+</nav>
+<div class="grafico">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div id="chart_div" style="width: 70%; height: 400px;"></div>
+</div>
+</body>
+</html>
