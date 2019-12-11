@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/tela de cadastro.css">
+    <script src="./funcoes.js"></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <div class="elementos">
+                <li><a href="tela_de_login.html">Login</a></li>
+                <li><a href="./tela_de_cadastro.html">Cadastro</a></li>
+    </nav>
+
+    <div class="caixas">
+
+        <form action="" method="POST" enctype="multipart/form-data" onsubmit=" return cadastrar()" id='form_cadastro'>
+            <h3>Cadastre-se</h3>
+            <br>
+            <label for="">Nome</label>
+            <br>
+            <input id="nome" type="text" required="required" name="nome">
+            <br>
+
+            <label for="">Email</label>
+            <br>
+            <input id="email" type="text" required="required" name="email"> </p>
+            <br>
+            <label for="">Senha</label>
+            <br>
+            <input id="senha" type="text" required="required" name="senha"> </p>
+            <br>
+            <label for="">Digite novamente sua senha</label>
+            <br>
+            <input id="senha2" type="text required=" required= "required" name="senha_"> </p>
+                <br>
+                <div class="btentrar ">
+                    <button onclick="Validar() ">Entrar</button>
+                </div>
+            </form>
+        </div>
+</body>
+
+</html>
+<script>
+    function cadastrar(){
+        aguardar();
+        var formulario= new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar",{
+            method:"POST",
+            body: formulario
+        }).then(function(response){
+            if(response.ok){
+                window.location.href='./tela_de_login.html';
+
+            }else {
+            console.log('erro de cadastro');
+            response.text().then(function(resposta),{
+                div_erro.innerHTML=resposta;
+            })
+            finalizar_aguardar();
+            }
+        });
+        return false;
+    }
+    function aguardar(){
+        div_erro.style.display='none';
+    }
+    function finalizar_aguardar(){
+        div_erro.style.display='block';
+    }
+    
+  
+  //function Validar() {
+    //    var nome_completo = nome.value;
+      //  var Email = email.value;
+        //var senha_cadastro = senha.value;
+       // var confirmar_senha = senha2.value;
+
+      //  if (nome_completo == "nome " && Email == "email " && senha_cadastro == "senha " && confirmar_senha == "confirmar ") {
+           // alert(`Parabens, você está logado`);
+        //} else
+           // alert(`Parece que algo deu errado, tente novamente `);
+
+
+    //}
+
+
+    
+</script>

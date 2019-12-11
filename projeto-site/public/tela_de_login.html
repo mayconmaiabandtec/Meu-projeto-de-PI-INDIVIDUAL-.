@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pagina de login</title>
+    <link rel="stylesheet" href="./css/tela de login.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href=".//index.html">Inicio</a></li>
+            
+            <div class="elementos">
+                <li><a href="tela_de_login.html">Login</a></li>
+                <li><a href="./tela_de_cadastro.html">Cadastro</a></li>
+    </nav>
+    
+    </div>
+    
+        <div class="quadrado">
+
+            <form action="" method="POST" enctype="multipart/form-data" onsubmit="return entrar()" id='form_entrar'>
+                <h3>Login</h3>
+                <label  for="">Email</label>
+                <input id="email" type="text" required="required" name="login"> </p>
+
+                <label  for="">Senha</label>
+                <input id="senha" type="password" required="required" name="senha"> </p>
+                <div class="btentrar">
+                    
+                    <button onclick="Validar()">Entrar</button>
+                </div>
+            </form>
+        </div>
+        <footer>&#169; Direitos reservados a Maycon</footer>
+
+</body>
+
+</html>
+<script>
+    function entrar(){
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_entrar));
+        fetch("/usuarios/autenticar",{
+            method:"POST",
+            body: formulario
+        }).then(resposta =>{
+            if(resposta.ok){
+                resposta.json().then(json=>{
+                    sessionStorage.login_usuario_meuapp= json.email;
+                    sessionStorage.nome_usuario_meuapp= json.nome;
+                    window.location.href='./index.html';
+                });
+            }else{
+                console.log('erro de login');
+                alert('erro login');
+                response.text().then(texto =>{
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+        return false;
+    }
+    function aguardar(){
+        div_erro.style.display='none';
+    }
+    function finalizar_aguardar(){
+        div_erro.style.display='block';
+        
+    }
+  //  function Validar() {
+    //    var Email = email.value;
+      //  var senha_cadastro = senha.value;
+        //if (Email == "email" && senha_cadastro == "senha") {
+         //   alert(`Parabens, você está logado.`);
+        //} else
+         //   alert(`Parece que ocorreu um erro, tente novamente.`);
+
+    //}
+</script>

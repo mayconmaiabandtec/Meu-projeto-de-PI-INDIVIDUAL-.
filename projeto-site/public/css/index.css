@@ -1,0 +1,134 @@
+*{
+    margin: 0%;
+    
+}
+
+
+html{
+   scroll-behavior: smooth; 
+}
+
+
+
+nav {
+    z-index: 2;
+    background-color: black;
+}
+
+nav ul {
+
+    width: 100;
+    background-color: transparent;
+    list-style: none;
+}
+
+nav ul li {
+    background-color: transparent;
+    display: inline;
+}
+/*alterando cor do texto, margem, distância, tirando o  
+sublinhado que fica quando normalmente se cria um menu
+e tirando a decoração padrão dos textos (roxa)*/
+
+nav ul li a {
+    padding: 15px 10px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-family: cursive;
+}
+/* Alterar cor quando passar o mouse em cima da opção*/
+
+nav ul li a:hover {
+    color: lightblue;
+}
+
+nav ul div {
+    float: right;
+}
+
+.section1{
+    display: flex;
+    /* o elemento abaixo deve ser alterado 
+    para 33vh depois do termino do site */
+    height: 100vh;
+    background-size: cover;
+    animation: slide 10s infinite;
+    animation-direction: alternate;
+
+
+}
+
+@keyframes slide {
+    0%, 30%{
+    background-image: url(../imagens/img_ny_1.jpg);
+        }
+        35%, 65%{
+            background-image: url(..//imagens/brooklyn.jpg);
+        }  
+        70%, 100%{
+            background-image: url(..//imagens/nova\ york.jpg);
+            
+                
+        }
+}
+
+.centralize{
+    margin: auto;
+    text-align: center;
+}
+
+.centralize h1{
+    color: white;
+}
+.section2{
+    display: flex;
+    height: 33vh;
+    
+    
+}
+
+.section4{
+    display: flex;
+    height: 33vh; 
+    float: right;
+}
+
+.imagemProjeto{
+    width: 15vw;
+    height: 15vw;
+    padding-left: 15px;
+}
+.imagemProjeto{
+    float: right;
+}
+.btn{
+    width: 100px;
+    padding: 6.8px;
+    box-sizing: border-box;
+    color: #fff;
+    border: solid 1px #4169E1;
+    border-radius: 10px;
+    background: #4169E1;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transition: all .2s linear;
+    color: #4169E1;
+    background: rgba(0, 0, 0, 0.6);
+    border: solid 1px black;
+}
+
+.section3{
+    display: flex;
+    height: 33vh; 
+    background-color:rgba(0, 0, 0, 0.2);
+}
+
+footer{
+    margin-top:15%;
+    background: black;
+    padding: 20px;
+    color: white;
+}
