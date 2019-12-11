@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>pagina de login</title>
     <link rel="stylesheet" href="./css/tela de login.css">
+    <script src="./funcoes.js"></script>
 </head>
 
 <body>
@@ -23,18 +24,21 @@
     
         <div class="quadrado">
 
-            <form action="" method="POST" enctype="multipart/form-data" onsubmit="return entrar()" id='form_entrar'>
+            <form id="form_login" method="post" onsubmit="return entrar()">
                 <h3>Login</h3>
                 <label  for="">Email</label>
-                <input id="email" type="text" required="required" name="login"> </p>
+                <input id="email" type="text" required="required" name="loginc"> </p>
 
                 <label  for="">Senha</label>
-                <input id="senha" type="password" required="required" name="senha"> </p>
+                <input id="senha" type="password" required="required" name="senhac"> </p>
                 <div class="btentrar">
                     
-                    <button onclick="Validar()">Entrar</button>
+                    <button onclick="Validar()" id="btn_entrar">Entrar</button>
                 </div>
             </form>
+        </div>
+        <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+            Usuário e/ou senha inválidos!
         </div>
         <footer>&#169; Direitos reservados a Maycon</footer>
 
@@ -42,37 +46,49 @@
 
 </html>
 <script>
-    function entrar(){
+function entrar() {
         aguardar();
-        var formulario = new URLSearchParams(new FormData(form_entrar));
-        fetch("/usuarios/autenticar",{
-            method:"POST",
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
             body: formulario
-        }).then(resposta =>{
-            if(resposta.ok){
-                resposta.json().then(json=>{
-                    sessionStorage.login_usuario_meuapp= json.email;
-                    sessionStorage.nome_usuario_meuapp= json.nome;
-                    window.location.href='./index.html';
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.email;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    // window.location.href = './tempo-real.html';
+                    window.location.href = './index.html';
                 });
-            }else{
-                console.log('erro de login');
-                alert('erro login');
-                response.text().then(texto =>{
+
+            } else {
+
+                console.log('Erro de login!');
+                alert(`Erro no login`);
+
+                response.text().then(texto => {
                     console.error(texto);
                     finalizar_aguardar(texto);
                 });
             }
         });
+
         return false;
     }
-    function aguardar(){
-        div_erro.style.display='none';
+    function aguardar() {
+        btn_entrar.disabled = true;
+
+        div_erro.style.display = 'none';
     }
-    function finalizar_aguardar(){
-        div_erro.style.display='block';
-        
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+
+        div_erro.style.display = 'block';
     }
+
   //  function Validar() {
     //    var Email = email.value;
       //  var senha_cadastro = senha.value;

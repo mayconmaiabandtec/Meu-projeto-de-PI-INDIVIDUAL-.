@@ -20,64 +20,74 @@
     </nav>
 
     <div class="caixas">
-
-        <form action="" method="POST" enctype="multipart/form-data" onsubmit=" return cadastrar()" id='form_cadastro'>
+        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
             <h3>Cadastre-se</h3>
             <br>
             <label for="">Nome</label>
+
+
             <br>
-            <input id="nome" type="text" required="required" name="nome">
+            <input id="nome" type="text" required="required" name="nomec">
             <br>
 
             <label for="">Email</label>
             <br>
-            <input id="email" type="text" required="required" name="email"> </p>
+            <input id="email" type="text" required="required" name="emailc"> </p>
             <br>
             <label for="">Senha</label>
             <br>
-            <input id="senha" type="text" required="required" name="senha"> </p>
+            <input id="senha" type="text" required="required" name="senhac"> </p>
             <br>
             <label for="">Digite novamente sua senha</label>
             <br>
-            <input id="senha2" type="text required=" required= "required" name="senha_"> </p>
-                <br>
-                <div class="btentrar ">
-                    <button onclick="Validar() ">Entrar</button>
-                </div>
-            </form>
-        </div>
+            <input id="senha2" type="text required=" required="required" name="senha_"> </p>
+            <br>
+            <div class="btentrar ">
+                <button onclick="Validar()" id='btn_entrar'>Entrar</button>
+
+            </div>
+        </form>
+
+    </div>
+    <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+        Erro no cadastro
+    </div>
 </body>
 
 </html>
 <script>
-    function cadastrar(){
+    function cadastrar() {
         aguardar();
-        var formulario= new URLSearchParams(new FormData(form_cadastro));
-        fetch("/usuarios/cadastrar",{
-            method:"POST",
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
             body: formulario
-        }).then(function(response){
-            if(response.ok){
-                window.location.href='./tela_de_login.html';
-
-            }else {
-            console.log('erro de cadastro');
-            response.text().then(function(resposta),{
-                div_erro.innerHTML=resposta;
-            })
-            finalizar_aguardar();
+        }).then(function (response) {
+            
+            if (response.ok) {
+                window.location.href='tela_de_login.html';
+            } else {
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
             }
         });
         return false;
     }
-    function aguardar(){
+    function aguardar() {
+        btn_entrar.disabled = true;
+       
         div_erro.style.display='none';
     }
-    function finalizar_aguardar(){
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+      
         div_erro.style.display='block';
     }
-    
-  
+
+
   //function Validar() {
     //    var nome_completo = nome.value;
       //  var Email = email.value;
@@ -93,5 +103,5 @@
     //}
 
 
-    
+
 </script>
