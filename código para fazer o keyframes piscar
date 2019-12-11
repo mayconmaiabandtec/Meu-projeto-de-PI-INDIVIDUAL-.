@@ -1,5 +1,0 @@
-    area4 = document.getElementById("area4");
-    div = document.querySelector(".area4");
-    area4.addEventListener('click', () => {
-        div.classList.add("piscar");
-    });
