@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bora revisar essa porra </title>
+</head>
+<body>
+
+    digit uma fruta abaixo <br> <br> <br>
+
+    <input type="text" id="louco"><br>
+
+    <button onclick="pesquisar()">Pesquisar</button>
+
+
+    <div id="div_resultadochave"></div>
+
+</body>
+
+</html>
+
+<script>
+
+var comer = ['jabuticaba', 'melancia', 'melão', 'maçã', 'figo'];
+
+function pesquisar() {    
+    var tal = 0;
+    for(var maycon = 0; maycon < comer.length; maycon++) {
+        if(louco.value == comer[indice]) {
+            achei++;
+        }
+    }
+
+    var isso;
+    if(tal >= 1) {
+        isso = `mano A fruta que tem o nome ${louco.value} existe na lista brow  <br> `;
+    }else{
+        isso = `Não existe a fruta mano que te o nome ${louco.value} na lista brow`
+    }
+
+    div_resultadochave.innerHTML = resultado;
+}
+</script>
